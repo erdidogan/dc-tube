@@ -6,7 +6,7 @@ import (
 
 func GetAudioUrl(videoId string) (string, error) {
 	//140  m4a   audio only
-	args := []string{"-v", "-o -", "--extract-audio", "-f", "140", "-g", videoId}
+	args := []string{"-v", "-f", "140", "-g", videoId}
 	return handler.Execute(args)
 }
 

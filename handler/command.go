@@ -9,24 +9,6 @@ import (
 
 const PATH = "yt-dlp"
 
-func ClearCache() {
-	path, err := getPath()
-
-	if err != nil {
-		log.Println("Path not found!")
-	}
-
-	args := []string{"--rm-cache-dir"}
-	cmd := exec.Command(path, args...)
-
-	err = cmd.Run()
-	if err != nil {
-		log.Println("Execution failed for cleaning cache ")
-
-	}
-	log.Println("Cache clean completed")
-}
-
 func Execute(args []string) (string, error) {
 	path, err := getPath()
 

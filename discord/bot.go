@@ -1,7 +1,6 @@
 package discord
 
 import (
-	"discord-tube/handler"
 	"discord-tube/video"
 	"fmt"
 	"github.com/bwmarrin/discordgo"
@@ -69,7 +68,6 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 		} else {
 			discord.ChannelMessageSendEmbed(message.ChannelID, generateEmbeddedMessage(name, url))
 		}
-		handler.ClearCache()
 	}
 }
 
